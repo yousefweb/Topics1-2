@@ -2,9 +2,13 @@
 //using System.Diagnostics.Tracing;
 //using System.Formats.Asn1;
 //using System.Reflection.Metadata.Ecma335;
+using System;
 using System.Formats.Asn1;
 using System.Linq.Expressions;
 using System.Transactions;
+using System.Text;
+using System.Net.Http.Headers;
+
 
 Console.WriteLine(" task1\n.............................................................");
 ////Question one
@@ -706,7 +710,7 @@ Console.WriteLine(" Task-function\n.............................................
 
 //Console.WriteLine("Result: [" + string.Join(", ", resultArray) + "]");
 //Question seven
-Console.WriteLine("this is the question7\n.......................................");
+//Console.WriteLine("this is the question7\n.......................................");
 //static int[] PowerElementIndex(int[] nums)
 //{
 //    List<int> result = new List<int>();
@@ -725,7 +729,7 @@ Console.WriteLine("this is the question7\n......................................
 
 //    Console.WriteLine("Result: [" + string.Join(", ", resultArray) + "]");
 //Question eight
-Console.WriteLine("this is the question8\n.......................................");
+//Console.WriteLine("this is the question8\n.......................................");
 //static int multiplication2(int a , int b){
 //    int sum = 0;
 //	for (int i = 0; i < Math.Abs(b); i++)
@@ -790,5 +794,465 @@ Console.WriteLine("this is the question8\n......................................
 //}
 //catch(Exception ex) { Console.WriteLine($"Error: {ex.Message}"); }
 
+Console.WriteLine(" Task-function2\n.............................................................");
+//task-function2
+//Question one
+//Console.WriteLine("this is the question1\n.......................................");
 
 
+//static int GetDaysBetweenDates(DateTime date1, DateTime date2)
+//{
+//    TimeSpan timeDifference = date2 - date1;
+
+//    int daysDifference = (int)timeDifference.TotalDays;
+
+//    return Math.Abs(daysDifference);
+//}
+//DateTime date1 = new DateTime(2019, 6, 14);
+//DateTime date2 = new DateTime(2019, 6, 20);
+//int result1 = GetDaysBetweenDates(date1, date2);
+//Console.WriteLine(result1);  
+
+//DateTime date3 = new DateTime(2018, 12, 29);
+//DateTime date4 = new DateTime(2019, 1, 1);
+//int result2 = GetDaysBetweenDates(date3, date4);
+//Console.WriteLine(result2);
+//Question two
+//Console.WriteLine("this is the question2\n.......................................");
+
+//static string[] StrNum(string[] num)
+//{
+//    var result = num.Where(x =>x.Any(char.IsDigit)).ToArray();
+//    return result;
+//}
+
+//string[] input1 = { "1a", "a", "2b", "b" };
+//string[] result3 = StrNum(input1);
+//Console.WriteLine(string.Join(", ", result3));
+
+//string[] input2 = { "abc", "abc10" };
+//string[] result4 = StrNum(input2);
+//Console.WriteLine(string.Join(", ", result4));
+//Question three
+//Console.WriteLine("this is the question3\n.......................................");
+
+
+//static string ReverseOddWords(string str)
+//{
+//    string[] words = str.Split(' ');
+
+//    for (int i = 0; i < words.Length; i++)
+//    {
+//        if (words[i].Length % 2 != 0)
+//        {
+//            char[] charArray = words[i].ToCharArray();
+//            Array.Reverse(charArray);
+//            words[i] = new string(charArray);
+//        }
+//    }
+
+//    string result = string.Join(" ", words);
+
+//    return result;
+//}
+//string result1 = ReverseOddWords("Bananas");
+//Console.WriteLine(result1);  
+
+//string result2 = ReverseOddWords("One two three four");
+//Console.WriteLine(result2); 
+
+//Question four
+//Console.WriteLine("this is the question4\n.......................................");
+//static bool IsPandigital(long number)
+//{
+//    string numberStr = number.ToString();
+
+//    for (int digit = 0; digit < 10; digit++)
+//    {
+//        if (!numberStr.Contains(digit.ToString()))
+//        {
+//            return false;
+//        }
+//    }
+
+//    return true;
+//}
+//bool result1 = IsPandigital(98140723568910);
+//Console.WriteLine(result1);  
+
+//bool result2 = IsPandigital(90864523148909);
+//Console.WriteLine(result2);  
+
+//bool result3 = IsPandigital(112233445566778899);
+//Console.WriteLine(result3);  
+
+Console.WriteLine(" Task-function3\n.............................................................");
+//task-function3
+//Question one
+//Console.WriteLine("this is the question1\n.......................................");
+//static Func<int, int> Add(int n)
+//{
+
+//    return x => x + n;
+//}
+//Func<int, int> add10 = Add(10);
+//Console.WriteLine(add10(20)); 
+
+//Func<int, int> addZero = Add(0);
+//Console.WriteLine(addZero(20));   
+
+//Func<int, int> addNeg30 = Add(-30);
+//Console.WriteLine(addNeg30(80)); 
+
+//Question two
+//Console.WriteLine("this is the question2\n.......................................");
+//static string removeLeadingTrailing(string n)
+//{
+//    decimal number = decimal.Parse(n);
+
+//    string result = number.ToString();
+
+
+//    if (result.Contains('.'))
+//    {
+//    result = result.TrimEnd('0');
+//    result = result.TrimStart('0');
+//    }
+//    if (result.EndsWith('.'))
+//    {
+//        result = result.TrimEnd('.');
+//    }
+//    return result;
+//}
+//Console.WriteLine(removeLeadingTrailing("230.000"));
+//Console.WriteLine(removeLeadingTrailing("00402"));
+//Console.WriteLine(removeLeadingTrailing("03.1400"));
+//Console.WriteLine(removeLeadingTrailing("30"));
+
+//Question thrre
+//Console.WriteLine("this is the question3\n.......................................");
+// static int secondLargest(int[] arr)
+//{
+//    if (arr.Length < 2)
+//    {
+//        throw new ArgumentException("Array must have at least two elements.");
+//    }
+
+//    int firstLargest = arr[0];
+//    int secondLargest = -1;
+
+//    foreach (int number in arr)
+//    {
+//        if (number > firstLargest)
+//        {
+//            secondLargest = firstLargest;
+//            firstLargest = number;
+//        }
+//        else if (number > secondLargest && number != firstLargest)
+//        {
+//            secondLargest = number;
+//        }
+//    }
+
+//    return secondLargest;
+//}
+//int[] numbers1 = { 10, 40, 30, 20, 50 };
+//Console.WriteLine(secondLargest(numbers1)); 
+
+//int[] numbers2 = { 25, 143, 89, 13, 105 };
+//Console.WriteLine(secondLargest(numbers2));  
+
+//int[] numbers3 = { 54, 23, 11, 17, 10 };
+//Console.WriteLine(secondLargest(numbers3));
+
+//Question four
+//Console.WriteLine("this is the question4\n.......................................");
+//static bool isRepdigit(int number)
+//{
+//    string numstr = number.ToString();
+//    char firstDigit = numstr[0];
+//    for (int i = 1; i < numstr.Length; i++)
+//    {
+//        if (numstr[i]!=firstDigit)
+//        {
+//            return false;
+//        }
+//    }
+//    return true;
+//}
+
+//Console.WriteLine(isRepdigit(66));
+//Console.WriteLine(isRepdigit(0));
+//Console.WriteLine(isRepdigit(-11));
+
+//Question five
+//Console.WriteLine("this is the question5\n.......................................");
+
+//static string reverseWords(string str)
+//{
+//    string[] strArr = str.Split(" ");
+//	string [] newStr = new string[strArr.Length];
+
+//	for (int i = strArr.Length-1; i >=0; i--)
+//	{
+//		newStr[strArr.Length-1-i] = strArr[i];
+//	}
+//	return string.Join(" ",newStr);
+//}
+//Console.WriteLine(reverseWords("the sky is blue"));    
+//Console.WriteLine(reverseWords("hello world! "));      
+//Console.WriteLine(reverseWords("a good example"));
+
+//Question six
+//Console.WriteLine("this is the question6\n.......................................");
+//static string SevenBoom(int[] numbers)
+//{
+//    for (int i = 0; i < numbers.Length; i++)
+
+//    {
+//        if (Math.Abs(numbers[i]).ToString().Contains('7'))
+//        {
+//            return "Boom!";
+//        }
+//    }
+
+//    return "there is no 7 in the array";
+//}
+
+//Console.WriteLine(SevenBoom(new int[] { 1, 2, 3, 4, 5, 6, 7 })); 
+//Console.WriteLine(SevenBoom(new int[] { 8, 6, 33, 100 }));          
+//Console.WriteLine(SevenBoom(new int[] { 2, 55, 60, 97, 86 }));
+
+//Question seven
+//Console.WriteLine("this is the question7\n.......................................");
+//static string insertWhitespace(string str)
+
+//{
+//    StringBuilder result = new StringBuilder();
+
+//    for (int i = 0; i < str.Length; i++)
+//    {
+
+//        if (i > 0 && char.IsUpper(str[i]) && char.IsLower(str[i - 1]))
+//        {
+//            result.Append(' ');
+//        }
+
+//        result.Append(str[i]);
+//    }
+
+//    return result.ToString();
+//}
+
+//Console.WriteLine(insertWhitespace("SheWalksToTheBeach"));
+//Console.WriteLine(insertWhitespace("MarvinTalksTooMuch"));
+//Console.WriteLine(insertWhitespace("TheGreatestUpsetInHistory"));
+
+//Question eight
+////Console.WriteLine("this is the question8\n.......................................");
+//static int countTrue(bool[] numArr)
+//{
+//    int c = 0;
+//	for (int i = 0; i < numArr.Length; i++)
+//	{
+//		if (numArr[i] == true)
+//		{
+//			c++;
+//		}
+//	}
+//	return c;
+//}
+
+//Console.WriteLine(countTrue(new bool[] { true, false, false, true, false }));
+//Console.WriteLine(countTrue(new bool[] { false, false, false, false }));
+//Console.WriteLine(countTrue(new bool[] {}));
+
+//Question nine
+////Console.WriteLine("this is the question9\n.......................................");
+//static string capToFront(string str)
+//{
+
+//    char[] charArray = str.ToCharArray();
+
+//    int j = 0;
+//    for (int i = 0; i < charArray.Length; i++)
+//    {
+//        if (char.IsUpper(charArray[i]))
+//        {
+//            char temp = charArray[i];
+//            charArray[i] = charArray[j];
+//            charArray[j] = temp;
+//            j++;
+//        }
+//    }
+
+//    return new string (charArray);
+//}
+//Console.WriteLine(capToFront("hApPy"));
+//Console.WriteLine(capToFront("moveMENT"));
+//Console.WriteLine(capToFront("shOrtCAKE"));
+
+
+//Question ten
+////Console.WriteLine("this is the question10\n.......................................");
+
+//static bool MatchLastItem(object[] arr)
+//{
+//    if (arr.Length == 0)
+//    {
+//        return false;
+//    }
+
+//    string lastItem = arr[arr.Length - 1].ToString();
+//    string concatenatedRest = "";
+
+//    for (int i = 0; i < arr.Length - 1; i++)
+//    {
+//        concatenatedRest += arr[i].ToString();
+//    }
+
+//    if (lastItem.Equals(concatenatedRest,StringComparison.Ordinal))
+//    {
+//        return true;
+//    }
+//    else
+//    {
+//        return false;
+//    }
+//}
+//Console.WriteLine(MatchLastItem(new object[] { "rsq", "6hi", "g", "rsq6hig" }));
+//Console.WriteLine(MatchLastItem(new object[] { 1, 1, 1, "11" }));
+//Console.WriteLine(MatchLastItem(new object[] { 8, "thunder", true, "8thundertrue" }));  
+
+
+
+//Question eleven
+//Console.WriteLine("this is the question11\n.......................................");
+//static int findNaN(double[] arr)
+//{
+//	for (int i = 0; i < arr.Length; i++)
+//	{
+//		if (double.IsNaN(arr[i]))
+//		{
+//			return i;
+//		}
+//	}
+//	return -1;
+//}
+//Console.WriteLine(findNaN(new double[] { 1, 2, double.NaN }));
+//Console.WriteLine(findNaN(new double[] { double.NaN, 1, 2, 3, 4 }));
+//Console.WriteLine(findNaN(new double[] { 0, 1, 2, 3, 4 }));
+
+
+//Question twelve
+////Console.WriteLine("this is the question12\n.......................................");
+
+
+//static object[] removeDups(object[] arr)
+//{
+//    if (arr.Length == 0)
+//    {
+//        throw new ArgumentException("The array is empty");
+//    }
+
+//    List<object> uniqueList = new List<object>();
+
+//    for (int i = 0; i < arr.Length; i++)
+//    {
+//        if (!uniqueList.Contains(arr[i]))
+//        {
+//            uniqueList.Add(arr[i]);
+//        }
+//    }
+
+//    return uniqueList.ToArray();
+//}
+//static void DisplayArray(object[] arr)
+//{
+//    Console.Write("[");
+//    for (int i = 0; i < arr.Length; i++)
+//    {
+//        Console.Write(arr[i]);
+//        if (i < arr.Length - 1)
+//        {
+//            Console.Write(", ");
+//        }
+//    }
+//    Console.WriteLine("]");
+//}
+//try
+//{
+//    var result1 = removeDups(new object[] { 1, 0, 1, 0 });
+//    DisplayArray(result1);
+
+//    var result2 = removeDups(new object[] { "The", "big", "cat" });
+//    DisplayArray(result2);
+
+//    var result3 = removeDups(new object[] { "John", "Taylor", "John" });
+//    DisplayArray(result3);
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine($"Error: {ex.Message}");
+//}
+
+
+//Question thirteen
+////Console.WriteLine("this is the question13\n.......................................");
+
+//static string ConvertTime(string time)
+//{
+
+//    DateTime parsedTime = DateTime.ParseExact(time, "hh:mm:sstt", "HH:mm:ss");
+
+//    return parsedTime.ToString();
+//}
+//Console.WriteLine(ConvertTime("07:05:45PM")); 
+//Console.WriteLine(ConvertTime("12:40:22AM")); 
+//Console.WriteLine(ConvertTime("12:45:54PM")); 
+
+
+//Question fourteen
+////Console.WriteLine("this is the question14\n.......................................");
+
+//static string RemoveLastVowel(string str)
+//{
+//    string[] words = str.Split(' ');
+//    for (int i = 0; i < words.Length; i++)
+//    {
+
+//        for (int j = words[i].Length - 1; j >= 0; j--)
+//        {
+//            if (words[i][j] == 'a' || words[i][j] == 'o' || words[i][j] == 'e' || words[i][j] == 'u' || words[i][j] =='i')
+//            {
+//                words[i] = words[i].Remove(j, 1);
+//                break;
+//            }
+//        }
+//    }
+//    return string.Join(" ",words);
+//}
+
+//Console.WriteLine(RemoveLastVowel("Those who dare to fail miserably can achieve greatly."));
+//Console.WriteLine(RemoveLastVowel("Love is a serious mental disease."));
+
+
+//Question fifteen
+//Console.WriteLine("this is the question15\n.......................................");
+//static int sumOfCubes(int[] num)
+//{
+//	double sum = 0;
+//	for (int i = 0; i < num.Length; i++)
+//	{
+//		double power = Math.Pow(num[i], 3);
+//		sum += power;
+//	}
+//	return (int) sum;
+//}
+
+//Console.WriteLine(sumOfCubes(new int[] {1,5,9}));
+//Console.WriteLine(sumOfCubes(new int[] { 3,4,5 }));
+//Console.WriteLine(sumOfCubes(new int[] {2}));
+//Console.WriteLine(sumOfCubes(new int[] {}));
+
+  
