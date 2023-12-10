@@ -1310,7 +1310,98 @@ class Program
         //DateTime dateOnly = DateConvert.ConvertToDate(dateString);
         //Console.WriteLine($"Converted Date: {dateOnly:yyyy-MM-dd}");
 
+        Console.WriteLine("Task6\n.......................................");
 
+        //Car myCar = new Car("Toyota", 2022, "Sedan", 25000.00m, "Camry", "123ABC", "Blue");
 
+        //Console.WriteLine(myCar.GetVehicleInformation());
+
+        //myCar.StartEngine();
+
+        //string carInformation = myCar.GetCarInformation();
+        //Console.WriteLine("\nCar Information:\n" + carInformation+"\n");
+
+        //myCar.StopEngine();
+
+        //carInformation = myCar.GetCarInformation();
+        //Console.WriteLine("\nUpdated Car Information:\n" + carInformation);
+
+        Console.WriteLine("Task7\n.......................................");
+
+    //    var newDirPath = Path.Combine(Directory.GetCurrentDirectory(), "MyNewFolder");
+    //    Directory.CreateDirectory(newDirPath);
+
+    //    var newFilePath = Path.Combine(newDirPath, "MyFile.txt");
+    //    var fileStream = File.Create(newFilePath);
+
+    //    using (var sw = new StreamWriter(fileStream))
+    //    {
+    //        sw.WriteLine("my name is: yousef aldeeb\r\nspecialize is : software engineering\r\nmy age is : 23\r\nwork: web development Asp.net core mvc \r\n");
+    //    }
+
+    //    using (var sr = new StreamReader(newFilePath))
+    //    {
+    //        var read = true;
+    //        int charCount = 0;
+    //        int wordCount = 0;
+
+    //        while (read)
+    //        {
+    //            var line = sr.ReadLine();
+    //            if (string.IsNullOrEmpty(line))
+    //            {
+    //                read = false;
+    //            }
+    //            else
+    //            {
+                   
+    //                charCount += CountCharNoSpace(line);
+
+                    
+    //                wordCount += CountWordsNoSpace(line);
+
+    //                Console.WriteLine(line);
+    //            }
+    //        }
+
+    //        Console.WriteLine($"\nTotal number of characters (excluding spaces): {charCount}");
+    //        Console.WriteLine($"Total number of words (excluding spaces): {wordCount}");
+    //    }
+    //}
+
+    //static int CountCharNoSpace(string text)
+    //{
+    //    int count = 0;
+    //    foreach (char c in text)
+    //    {
+    //        if (!char.IsWhiteSpace(c))
+    //        {
+    //            count++;
+    //        }
+    //    }
+    //    return count;
+    //}
+
+    //static int CountWordsNoSpace(string text)
+    //{
+    //    int count = 0;
+    //    bool inWord = false;
+
+    //    foreach (char c in text)
+    //    {
+    //        if (!char.IsWhiteSpace(c))
+    //        {
+    //            if (!inWord)
+    //            {
+    //                count++;
+    //                inWord = true;
+    //            }
+    //        }
+    //        else
+    //        {
+    //            inWord = false;
+    //        }
+    //    }
+    //    return count;
     }
 }
